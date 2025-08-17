@@ -47,7 +47,7 @@ on:
 jobs:
   download_ipa:
     name: 'IPATool Operations'
-    runs-on: "windows-latest"
+    runs-on: windows-2022
     steps:
       - name: Masking inputs
         run: |
@@ -64,6 +64,7 @@ jobs:
         run: |
           git clone -b itunes_server https://github.com/NyaMisty/ipatool-py
           pip3 install -r ipatool-py/requirements.txt
+          pip install frida==16.1.9
           mkdir -p ipaDown
         shell: bash
 
